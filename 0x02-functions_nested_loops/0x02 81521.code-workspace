@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "hex-c-coding",
+			"path": ".."
+		},
+		{
+			"name": "0x02-functions_nested_loops",
+			"path": "..\\..\\holbertonschool-low_level_programming\\0x02-functions_nested_loops"
+		}
+	],
+	"settings": {}
+}
