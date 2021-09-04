@@ -1,14 +1,16 @@
+/**
+ * main - main function
+ * @argc: count of arguments
+ * @argv: array of arguments
+ * Return: integer
+  */
+
 #include "holberton.h"
 #include <stdio.h>
-/**
-* main - prints program name
-* @argc: lenght of argv
-* @argv: arguments array
-* Return: it's name
-*/
+
 int main(int argc, char *argv[])
 {
-	if (argc)
+	if (argc == 1)
 	{
 		printf("%s\n", argv[0]);
 	}
