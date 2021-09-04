@@ -1,35 +1,56 @@
+/**
+ * main - adds 2 positive numbers
+ * intlen - recursive to calculate digits in number
+ * @c: integer
+ * Return: integer
+ * Auth: Zivile V. Silveira
+ */
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
 
-/**
- * main - program that multiplies two numbers
- * @argc: argument count
- * @argv: argument vector
- * Return: 0 for success or 1 for error
- */
-int main(int argc, char *argv[])
+int intlen(int c);
+int main(int argc, char **argv)
 {
-	int i, j, length;
-	int sum = 0;
-	char *s;
+	int result, i, a, b;
 
+	result = 0;
+
+	if (argc < 2)
+	{
+		printf("0\n");
+		return (0);
+	}
 	for (i = 1; i < argc; i++)
 	{
-		s = argv[i];
-		length = strlen(s);
+		a = strlen(argv[i]);
+		b = intlen(atoi(argv[i]));
 
-		for (j = 0; j < length; j++)
+		if (a != b)
 		{
-			if (isdigit(*(s + j)) == 0)
-			{
-				printf("Error\n");
-				return (1);
-			}
+			printf("Error\n");
+			return (0);
 		}
-		sum = sum + atoi(argv[i]);
+		result += atoi(argv[i]);
 	}
-	printf("%i\n", sum);
+	printf("%d\n", result);
 	return (0);
+}
+
+/**
+ * intlen - recursive to calculate digits in number
+ * @c: integer
+ * Return: integer
+ */
+
+int intlen(int c)
+{
+	if (c == 0)
+	{
+		return (0);
+	}
+	return (1 + intlen(c / 10));
 }
