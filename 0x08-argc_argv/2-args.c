@@ -1,13 +1,12 @@
-/**
- * main - print all arguments it receives.
- * @argc: count of arguments
- * @argv: array of arguments
- * Return: integer
- */
-
 #include <stdio.h>
 
-int main(int argc, char **argv)
+/**
+ * main - prints all arguments it receives
+ * @argc: argument count
+ * @argv: argument vector
+ * Return: 0
+ */
+int main(int argc, char *argv[])
 {
 	int i;
 
