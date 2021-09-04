@@ -1,31 +1,55 @@
-#include "holberton.h"
+/**
+ * main - adds 2 positive numbers
+ * intlen - recursive to calculate digits in number
+ * @c: integer
+ * Return: integer
+  */
+
+
+#include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
-/**
-* main - adds positive numbers
-* @argc: lenght of argv
-* @argv: array contents
-* Return: 0 if no add, 1 if is not a number
-*/
-int main(int argc, char *argv[])
+#include <string.h>
+
+int intlen(int c);
+int main(int argc, char **argv)
 {
-	int result, i;
+	int result, i, a, b;
 
 	result = 0;
-	if (argc < 1)
-		printf("%d\n", 0);
-	while (argc-- && argc > 0)
+
+	if (argc < 2)
 	{
-		for (i = 0; argv[argc][i] != '\0'; i++)
+		printf("0\n");
+		return (0);
+	}
+	for (i = 1; i < argc; i++)
+	{
+		a = strlen(argv[i]);
+		b = intlen(atoi(argv[i]));
+
+		if (a != b)
 		{
-			if (!(isdigit(argv[argc][i])))
-			{
-				printf("Error\n");
-				return (1);
-			}
+			printf("Error\n");
+			return (0);
 		}
-		result += atoi(argv[argc]);
+		result += atoi(argv[i]);
 	}
 	printf("%d\n", result);
 	return (0);
+}
+
+/**
+ * intlen - recursive to calculate digits in number
+ * @c: integer
+ * Return: integer
+ */
+
+int intlen(int c)
+{
+	if (c == 0)
+	{
+		return (0);
+	}
+	return (1 + intlen(c / 10));
 }

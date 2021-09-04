@@ -1,25 +1,24 @@
-#include "holberton.h"
-#include "stdlib.h"
 /**
-* main - multiplies 2 numbers
-* @argc: lenght of argv
-* @argv: array contents
-* Return: 0 if insert 2 numbers, 0 if not
-*/
-int main(int argc, char *argv[])
+ * main - multiplies 2 numbers.
+ * @argc: count of arguments
+ * @argv: array of arguments
+ * Return: integer
+  */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char **argv)
 {
 	int result;
 
-	result = 0;
-	if (argc == 3)
-	{
-		result = atoi(argv[1]) * atoi(argv[2]);
-		printf("%d\n", result);
-		return (0);
-	}
-	else
+	if (argc != 3)
 	{
 		printf("Error\n");
-		return (1);
+		return (0);
 	}
+
+	result = atoi(argv[1]) * atoi(argv[2]);
+	printf("%d\n", result);
+	return (0);
 }
