@@ -1,43 +1,31 @@
-#include <stdio.h>
+#include "holberton.h"
 #include <stdlib.h>
 #include <ctype.h>
-
 /**
-* main - Find the sum of a set of integers input as
-*	command line arguments
-* @argc: the number of command line arguments
-* @argv: an array containing all command line arguments
-*
-* Return: 1 on Error resulting from alpha character interruption
-*	0 on successful print
+* main - adds positive numbers
+* @argc: lenght of argv
+* @argv: array contents
+* Return: 0 if no add, 1 if is not a number
 */
-
 int main(int argc, char *argv[])
 {
-	int i, x, t, num;
+	int result, i;
 
-	t = 0;
-
-	if (argc == 1)
+	result = 0;
+	if (argc < 1)
+		printf("%d\n", 0);
+	while (argc-- && argc > 0)
 	{
-		printf("0\n");
-		return (0);
-	}
-
-	for (i = 1; i < argc; i++)
-	{
-		for (x = 0; argv[i][x] != 00; x++)
+		for (i = 0; argv[argc][i] != '\0'; i++)
 		{
-			if (isdigit(argv[i][x]) == 0)
+			if (!(isdigit(argv[argc][i])))
 			{
 				printf("Error\n");
 				return (1);
 			}
 		}
-
-		num = (atoi(argv[i]));
-		t = t + num;
+		result += atoi(argv[argc]);
 	}
-	printf("%d\n", t);
+	printf("%d\n", result);
 	return (0);
 }

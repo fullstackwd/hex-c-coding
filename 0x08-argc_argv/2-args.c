@@ -1,21 +1,15 @@
 #include <stdio.h>
-
 /**
-* main - print each command line argument
-* @argc: number of command line arguments
-* @argv: array containing the command line arguments
-*
-* Return: 0 on successful printing
+* main - prints all arguments
+* @argv: array contents
+* @argc: number of contents
+* Return: 0
 */
-
 int main(int argc, char *argv[])
 {
-	int i;
-
-	for (i = 0; i < argc; i++)
+	while (argc--)
 	{
-		printf("%s\n", argv[i]);
+		printf("%s\n", *argv++);
 	}
-
 	return (0);
 }

@@ -1,27 +1,25 @@
-#include <stdio.h>
-#include <stdlib.h>
-
+#include "holberton.h"
+#include "stdlib.h"
 /**
-* main - Multiple two integers received as command line arguments
-* @argc: number of command line arguments
-* @argv: array containing all command line arguments
-*
-* Return: 1 on Error (insufficient arguments), 0 on success
+* main - multiplies 2 numbers
+* @argc: lenght of argv
+* @argv: array contents
+* Return: 0 if insert 2 numbers, 0 if not
 */
-
 int main(int argc, char *argv[])
 {
-	int num1, num2;
+	int result;
 
-	if (argc < 2 || argc > 3)
+	result = 0;
+	if (argc == 3)
+	{
+		result = atoi(argv[1]) * atoi(argv[2]);
+		printf("%d\n", result);
+		return (0);
+	}
+	else
 	{
 		printf("Error\n");
 		return (1);
 	}
-
-	num1 = atoi(argv[1]);
-	num2 = atoi(argv[2]);
-
-	printf("%d\n", (num1 * num2));
-	return (0);
 }

@@ -1,16 +1,16 @@
+#include "holberton.h"
 #include <stdio.h>
-
 /**
-* main - print number of command line arguments
-* @argc: number of command line arguments
-* @argv: array containing command line arguments
-*
-* Return: 0 on successful print
+* main - prints program name
+* @argc: lenght of argv
+* @argv: arguments array
+* Return: it's name
 */
-
 int main(int argc, char *argv[])
 {
-	(void)argv;
-	printf("%d\n", (argc - 1));
+	if (argc)
+	{
+		printf("%s\n", argv[0]);
+	}
 	return (0);
 }
