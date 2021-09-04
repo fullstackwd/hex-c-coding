@@ -1,35 +1,43 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
-#include <string.h>
 
 /**
- * main - program that multiplies two numbers
- * @argc: argument count
- * @argv: argument vector
- * Return: 0 for success or 1 for error
- */
+* main - Find the sum of a set of integers input as
+*	command line arguments
+* @argc: the number of command line arguments
+* @argv: an array containing all command line arguments
+*
+* Return: 1 on Error resulting from alpha character interruption
+*	0 on successful print
+*/
+
 int main(int argc, char *argv[])
 {
-	int i, j, length;
-	int sum = 0;
-	char *s;
+	int i, x, t, num;
+
+	t = 0;
+
+	if (argc == 1)
+	{
+		printf("0\n");
+		return (0);
+	}
 
 	for (i = 1; i < argc; i++)
 	{
-		s = argv[i];
-		length = strlen(s);
-
-		for (j = 0; j < length; j++)
+		for (x = 0; argv[i][x] != 00; x++)
 		{
-			if (isdigit(*(s + j)) == 0)
+			if (isdigit(argv[i][x]) == 0)
 			{
 				printf("Error\n");
 				return (1);
 			}
 		}
-		sum = sum + atoi(argv[i]);
+
+		num = (atoi(argv[i]));
+		t = t + num;
 	}
-	printf("%i\n", sum);
+	printf("%d\n", t);
 	return (0);
 }

@@ -1,13 +1,12 @@
-#include "main.h"
 #include <stdio.h>
 
 /**
- * main - Entry point
- * @argc: length of argv[]
- * @argv: pointer to char of arguments
- * Description: prints all arguments given)?
- * Return: 0 (SUCCESS)
- */
+* main - print each command line argument
+* @argc: number of command line arguments
+* @argv: array containing the command line arguments
+*
+* Return: 0 on successful printing
+*/
 
 int main(int argc, char *argv[])
 {
