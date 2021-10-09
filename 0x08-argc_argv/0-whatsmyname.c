@@ -3,7 +3,7 @@
 * @argc: lenght of argv
 * @argv: arguments array
 * Return: it's name
-**/
+*/
 
 #include "holberton.h"
 #include <stdio.h>
